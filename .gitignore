@@ -1,1 +1,4 @@
+# Python cached file
 __pycache__/
+# JetBrains IDE root
+.idea/
