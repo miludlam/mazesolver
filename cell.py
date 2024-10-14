@@ -1,7 +1,7 @@
 from line import Line
 from point import Point
 
-class Cell():
+class Cell:
     def __init__(self, win=None):
         self.has_left_wall = True
         self.has_right_wall = True
@@ -25,15 +25,27 @@ class Cell():
         if self.has_left_wall:
             left_wall = Line(Point(x1, y1), Point(x1, y2))
             self._win.draw_line(left_wall)
+        else:
+            left_wall = Line(Point(x1, y1), Point(x1, y2))
+            self._win.draw_line(left_wall, "white")
         if self.has_right_wall:
             right_wall = Line(Point(x2, y1), Point(x2, y2))
             self._win.draw_line(right_wall)
+        else:
+            right_wall = Line(Point(x2, y1), Point(x2, y2))
+            self._win.draw_line(right_wall, "white")
         if self.has_top_wall:
             top_wall = Line(Point(x1, y1), Point(x2, y1))
             self._win.draw_line(top_wall)
+        else:
+            top_wall = Line(Point(x1, y1), Point(x2, y1))
+            self._win.draw_line(top_wall, "white")
         if self.has_bottom_wall:
             bottom_wall = Line(Point(x1, y2), Point(x2, y2))
             self._win.draw_line(bottom_wall)
+        else:
+            bottom_wall = Line(Point(x1, y2), Point(x2, y2))
+            self._win.draw_line(bottom_wall, "white")
 
     def draw_move(self, to_cell, undo=False):
         bg = "gray"
